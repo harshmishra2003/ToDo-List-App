@@ -1,10 +1,11 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-// Auto-filled from google-services.json
+// Auto-filled from google-services.json & secured with flutter_dotenv
 // Firebase Project: login-ff68f
-// Package: com.example.login
+// Package: com.todoapp.todo_app
 
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
@@ -21,38 +22,33 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCuXkIduTMNwJUijE4wS_i45A5issPjRWg',
-    appId: '1:377972901757:android:eccc459cb356d39c96ee14',
-    messagingSenderId: '377972901757',
-    projectId: 'login-ff68f',
-    storageBucket: 'login-ff68f.firebasestorage.app',
-    // TODO: Set your Realtime Database URL if different from the default
-    databaseURL: 'https://login-ff68f-default-rtdb.firebaseio.com',
-  );
+  static FirebaseOptions get android => FirebaseOptions(
+        apiKey: dotenv.env['FIREBASE_API_KEY'] ?? '',
+        appId: dotenv.env['FIREBASE_APP_ID_ANDROID'] ?? '',
+        messagingSenderId: dotenv.env['FIREBASE_SENDER_ID'] ?? '',
+        projectId: dotenv.env['FIREBASE_PROJECT_ID'] ?? '',
+        storageBucket: dotenv.env['FIREBASE_STORAGE_BUCKET'] ?? '',
+        databaseURL: dotenv.env['FIREBASE_DB_URL'] ?? '',
+      );
 
-  // TODO: Add your Web app config here if using flutter run -d chrome
-  // Register a Web app in Firebase Console > Project Settings > Add app > Web
-  // Then replace these placeholder values
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCuXkIduTMNwJUijE4wS_i45A5issPjRWg',
-    appId: 'YOUR_WEB_APP_ID',
-    messagingSenderId: '377972901757',
-    projectId: 'login-ff68f',
-    authDomain: 'login-ff68f.firebaseapp.com',
-    databaseURL: 'https://login-ff68f-default-rtdb.firebaseio.com',
-    storageBucket: 'login-ff68f.firebasestorage.app',
-  );
+  static FirebaseOptions get web => FirebaseOptions(
+        apiKey: dotenv.env['FIREBASE_API_KEY'] ?? '',
+        appId: 'YOUR_WEB_APP_ID', // Replace in Firebase Console if using Web
+        messagingSenderId: dotenv.env['FIREBASE_SENDER_ID'] ?? '',
+        projectId: dotenv.env['FIREBASE_PROJECT_ID'] ?? '',
+        authDomain: dotenv.env['FIREBASE_AUTH_DOMAIN'] ?? '',
+        databaseURL: dotenv.env['FIREBASE_DB_URL'] ?? '',
+        storageBucket: dotenv.env['FIREBASE_STORAGE_BUCKET'] ?? '',
+      );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCuXkIduTMNwJUijE4wS_i45A5issPjRWg',
-    appId: 'YOUR_IOS_APP_ID',
-    messagingSenderId: '377972901757',
-    projectId: 'login-ff68f',
-    databaseURL: 'https://login-ff68f-default-rtdb.firebaseio.com',
-    storageBucket: 'login-ff68f.firebasestorage.app',
-    iosClientId:
-        '377972901757-lneuqal9glcdcjtsdjor7dp4duj250po.apps.googleusercontent.com',
-    iosBundleId: 'com.example.login',
-  );
+  static FirebaseOptions get ios => FirebaseOptions(
+        apiKey: dotenv.env['FIREBASE_API_KEY'] ?? '',
+        appId: 'YOUR_IOS_APP_ID',
+        messagingSenderId: dotenv.env['FIREBASE_SENDER_ID'] ?? '',
+        projectId: dotenv.env['FIREBASE_PROJECT_ID'] ?? '',
+        databaseURL: dotenv.env['FIREBASE_DB_URL'] ?? '',
+        storageBucket: dotenv.env['FIREBASE_STORAGE_BUCKET'] ?? '',
+        iosClientId: dotenv.env['FIREBASE_IOS_CLIENT_ID'] ?? '',
+        iosBundleId: dotenv.env['FIREBASE_IOS_BUNDLE_ID'] ?? '',
+      );
 }

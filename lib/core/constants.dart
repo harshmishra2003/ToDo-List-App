@@ -1,14 +1,14 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 // ============================================================
 //  CORE CONSTANTS
-//  TODO: Replace the values below with your Firebase project
-//  config after setting up Firebase Console.
+//  Secured via flutter_dotenv (.env file ignored in git)
 // ============================================================
 
 class AppConstants {
-  // TODO: Paste your Firebase Realtime Database URL here
-  // Example: https://my-todo-app-default-rtdb.firebaseio.com
-  static const String databaseUrl =
-      'https://login-ff68f-default-rtdb.firebaseio.com';
+  // Read Database URL securely from environment
+  static String get databaseUrl =>
+      dotenv.env['FIREBASE_DB_URL'] ?? 'https://login-ff68f-default-rtdb.firebaseio.com';
 
   // App-level constants
   static const String appName = 'Tasky';

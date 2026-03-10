@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'core/theme.dart';
 import 'providers/auth_provider.dart';
 import 'providers/task_provider.dart';
@@ -13,6 +14,9 @@ import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  
+  // Load environment variables for Firebase secrets
+  await dotenv.load(fileName: ".env");
 
   // Lock orientation to portrait (common for todo apps)
   await SystemChrome.setPreferredOrientations([

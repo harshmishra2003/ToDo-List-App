@@ -50,6 +50,9 @@ android/app/google-services.json
 android/app/google-services\ (1).json
 ios/GoogleService-Info.plist
 
+# Environment variables
+.env
+
 # Firebase options (contains API keys — use environment vars in CI/CD)
 # Uncomment the line below if you want to exclude firebase_options.dart too
 # lib/firebase_options.dart
