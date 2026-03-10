@@ -245,7 +245,7 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
                 const SizedBox(width: 12),
                 Expanded(
                   flex: 2,
-                  child: taskProvider.isOperating
+                  child: _isSaving
                       ? Container(
                           height: 52,
                           decoration: BoxDecoration(
