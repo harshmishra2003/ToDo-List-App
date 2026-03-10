@@ -43,3 +43,13 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Firebase sensitive files — DO NOT commit to public repos
+# Add your own google-services.json locally (download from Firebase Console)
+android/app/google-services.json
+android/app/google-services\ (1).json
+ios/GoogleService-Info.plist
+
+# Firebase options (contains API keys — use environment vars in CI/CD)
+# Uncomment the line below if you want to exclude firebase_options.dart too
+# lib/firebase_options.dart
