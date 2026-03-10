@@ -107,6 +107,10 @@ flutter build apk --release
 > Add your screenshots here after running the app.
 
 ---
+<img width="1918" height="1004" alt="Screenshot 2026-03-10 162421" src="https://github.com/user-attachments/assets/2be08d4f-5f93-4f4a-8c4b-e448a7026a2c" />
+<img width="1882" height<img width="1914" height="900" alt="Screenshot 2026-03-10 162646" src="https://github.com/user-attachments/assets/d89f8313-d0b9-41d3-a20d-9746edecc410" />
+="860" alt="Screenshot 2026-03-10 162659" src="https://github.com/user-attachments/assets/64b0c464-6128-4a9a-bde4-9c19f0ac01e8" />
+<img width="1919" height="985" alt="Screenshot 2026-03-10 162754" src="https://github.com/user-attachments/assets/5826c38e-9449-4d53-ad19-0e73849743a5" />
 
 ## 📄 License
 
